@@ -14,6 +14,12 @@ http://localhost
 http://localhost:8080
 ```
 
+Данные для подключения к Memcached
+```
+host: memcached
+port: 11211
+```
+
 ### Подсказки
 Консолька для запуска php скриптов
 
