@@ -2,7 +2,24 @@
 
 PHP + MySql + Apache + NGINX
 
-### Helpers
+### Адреса
+
+Сайт:
+```
+http://localhost
+```
+
+Админер
+```
+http://localhost:8080
+```
+
+### Подсказки
+Консолька для запуска php скриптов
+
+```sh
+docker exec -it server_web_1 bash
+```
 
 Консолька Mysql
 ```sh
@@ -13,3 +30,5 @@ docker exec -it server_db_1 /usr/bin/mysql -uroot -pexample
 ```sh
 cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
 ```
+
+
