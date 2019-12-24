@@ -21,9 +21,17 @@ services:
     build:
       context: ./
       dockerfile: docker/web.Dockerfile
-    ports:
-      - 80:80
     volumes:
       - ./src:/var/www/html
     links:
       - db
+
+  nginx:
+    image: nginx:1.13
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - web
