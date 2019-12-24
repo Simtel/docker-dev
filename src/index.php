@@ -5,7 +5,7 @@
 # $ php -f db-connect-test.php
 $mysqli = new mysqli('db', 'root', 'example');
 
-/* check connection */
+/* check connection mysql */
 if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
@@ -18,6 +18,22 @@ if ($mysqli->ping()) {
     printf ("Error: %s\n", $mysqli->error);
 }
 
-
-/* close connection */
 $mysqli->close();
+/* close test connection */
+
+
+
+/* test connection memcached */
+$mc = new Memcached();
+$mc->addServer("memcached", 11211);
+
+$mc->set("foo", "Hello!");
+$mc->set("bar", "Memcached...");
+
+$arr = array(
+    $mc->get("foo"),
+    $mc->get("bar")
+);
+var_dump($arr);
+
+/* close test connection */
