@@ -26,17 +26,16 @@ port: 11211
 ### <a name="getstarted"></a> Get started
 
 Клонируем репозиторий
-```bash
+```console
 git@github.com:Simtel/docker-dev.git
 ```
 Переходим в папку
-```bash
+```console
 cd docker-dev
 ``` 
 
 Билдим контейнеры
-
-```bash
+```console
 make build
 ```
 
