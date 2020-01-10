@@ -27,6 +27,8 @@ http://localhost
 Админер
 ```
 http://localhost:8080
+login: root
+password: example
 ```
 
 Данные для подключения к Memcached
@@ -65,7 +67,7 @@ docker exec -it docker-dev_db_1 /usr/bin/mysql -uroot -pexample
 
 Восстановление бд из файла дампа
 ```sh
-cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
+cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=example DATABASE
 ```
 
 Если нужно какие то настройки вносить в php.ini, то задавать их надо в 
