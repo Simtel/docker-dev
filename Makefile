@@ -20,7 +20,7 @@ stop: ## Stop contrainers
 restart: stop up ## Restart docker containers	
 
 mysql-console: ## Mysql Console Failed
-	@docker exec -it server_db_1 /usr/bin/mysql -uroot -pexample	
+	@docker exec -it docker-dev_db_1 /usr/bin/mysql -uroot -pexample
 
 php-console: ## PHP console
-	docker exec -it server_web_1 bash
+	docker exec -it docker-dev_web_1 bash
