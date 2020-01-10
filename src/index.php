@@ -27,8 +27,8 @@ $mysqli->close();
 $mc = new Memcached();
 $mc->addServer("memcached", 11211);
 
-$mc->set("foo", "Hello!");
-$mc->set("bar", "Memcached...");
+$mc->set("foo", "Hello! 1");
+$mc->set("bar", "Memcached 2...");
 
 $arr = array(
     $mc->get("foo"),

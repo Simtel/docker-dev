@@ -4,8 +4,8 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 
 RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev \
-    && pecl install memcached \
-    && docker-php-ext-enable memcached
+    && pecl install memcached xdebug \
+    && docker-php-ext-enable memcached xdebug
 
 
 RUN apt-get update && apt-get install -y \
@@ -18,3 +18,5 @@ RUN apt-get update && apt-get install -y \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer --version
+
+ADD ./php.ini /usr/local/etc/php/php.ini
