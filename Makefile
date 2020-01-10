@@ -23,4 +23,4 @@ mysql-console: ## Mysql Console Failed
 	@docker exec -it server_db_1 /usr/bin/mysql -uroot -pexample	
 
 php-console: ## PHP console
-	docker exec -it server_web_1 bash	
+	docker exec -it server_web_1 bash
