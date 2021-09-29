@@ -1,8 +1,6 @@
 # Docker 
 
-PHP 7.4
-
-Apache 
+PHP-FPM 7.4
 
 MySQL + Adminer
 
@@ -11,6 +9,8 @@ Nginx 1.13
 XDebug
 
 Memcache:latest
+
+Mailhog
 
 ---
 
@@ -36,6 +36,11 @@ password: example
 host: memcached
 port: 11211
 ```
+
+Веб интерфейс к mailhog
+```
+http://localhost:8025
+```
 ---
 ### <a name="getstarted"></a> Get started
 
@@ -57,17 +62,17 @@ make build
 Консолька для запуска php скриптов
 
 ```sh
-docker exec -it docker-dev_web_1 bash
+make php-console
 ```
 
 Консолька Mysql
 ```sh
-docker exec -it docker-dev_db_1 /usr/bin/mysql -uroot -pexample
+make mysql-console
 ```
 
 Восстановление бд из файла дампа
 ```sh
-cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=example DATABASE
+cat backup.sql | docker exec -i dev-db /usr/bin/mysql -u root --password=example DATABASE
 ```
 
 Если нужно какие то настройки вносить в php.ini, то задавать их надо в 
@@ -75,4 +80,6 @@ cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=exam
 ```console
 ./docker/php/php.ini
 ```
+
+и затем перезапустить контейнеры.
 
