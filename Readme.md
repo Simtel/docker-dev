@@ -1,6 +1,6 @@
 # Docker 
 
-PHP-FPM 7.4
+PHP-FPM 8.0
 
 MySQL + Adminer
 
